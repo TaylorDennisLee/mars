@@ -40,6 +40,7 @@ import { SidebarService } from './sidebar.service';
       position: fixed;
       will-change: initial;
       z-index: 99999999;
+      width: 15rem;
     }
 
       .ng-sidebar--left {

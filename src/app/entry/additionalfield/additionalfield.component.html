@@ -1,0 +1,19 @@
+<div class="field" [formGroup]="fieldGroup">
+  <button type="button" class="ui icon button circular basic mini" (click)="remove()">
+    <i class="icon remove"></i>
+  </button>
+  <label *ngIf="!stage_switch"> {{fieldnumber}}. Custom Field - {{ fieldname }} </label>
+  <div class="ui input" *ngIf="!stage_switch">
+    <button class="ui button labeled icon" (click)="stage_switch = !stage_switch">
+      Next <i class="chevron right icon circle"></i>
+    </button>
+    <input type="text" [(ngModel)]='fieldname' formControlName="field_name" placeholder="Enter field name">
+  </div>
+  <label *ngIf="stage_switch"> {{fieldnumber}}. {{ fieldname }} </label>
+  <div class="ui input" *ngIf="stage_switch">
+    <button class="ui button labeled icon" (click)="stage_switch = !stage_switch">
+      Prev <i class="chevron left icon circle"></i>
+    </button>
+    <input type="text" formControlName="field_value" placeholder="Enter field value">
+  </div>
+</div>
