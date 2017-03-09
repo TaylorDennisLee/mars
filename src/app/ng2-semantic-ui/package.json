@@ -1,0 +1,126 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "ng2-semantic-ui@github:taylordennislee/ng2-semantic-ui",
+        "scope": null,
+        "escapedName": "ng2-semantic-ui",
+        "name": "ng2-semantic-ui",
+        "rawSpec": "github:taylordennislee/ng2-semantic-ui",
+        "spec": "github:taylordennislee/ng2-semantic-ui",
+        "type": "hosted",
+        "hosted": {
+          "type": "github",
+          "ssh": "git@github.com:taylordennislee/ng2-semantic-ui.git",
+          "sshUrl": "git+ssh://git@github.com/taylordennislee/ng2-semantic-ui.git",
+          "httpsUrl": "git+https://github.com/taylordennislee/ng2-semantic-ui.git",
+          "gitUrl": "git://github.com/taylordennislee/ng2-semantic-ui.git",
+          "shortcut": "github:taylordennislee/ng2-semantic-ui",
+          "directUrl": "https://raw.githubusercontent.com/taylordennislee/ng2-semantic-ui/master/package.json"
+        }
+      },
+      "/Users/taylorlee/sunrise/antani-cli"
+    ]
+  ],
+  "_from": "taylordennislee/ng2-semantic-ui",
+  "_id": "ng2-semantic-ui@0.4.6",
+  "_inCache": true,
+  "_location": "/ng2-semantic-ui",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "ng2-semantic-ui@github:taylordennislee/ng2-semantic-ui",
+    "scope": null,
+    "escapedName": "ng2-semantic-ui",
+    "name": "ng2-semantic-ui",
+    "rawSpec": "github:taylordennislee/ng2-semantic-ui",
+    "spec": "github:taylordennislee/ng2-semantic-ui",
+    "type": "hosted",
+    "hosted": {
+      "type": "github",
+      "ssh": "git@github.com:taylordennislee/ng2-semantic-ui.git",
+      "sshUrl": "git+ssh://git@github.com/taylordennislee/ng2-semantic-ui.git",
+      "httpsUrl": "git+https://github.com/taylordennislee/ng2-semantic-ui.git",
+      "gitUrl": "git://github.com/taylordennislee/ng2-semantic-ui.git",
+      "shortcut": "github:taylordennislee/ng2-semantic-ui",
+      "directUrl": "https://raw.githubusercontent.com/taylordennislee/ng2-semantic-ui/master/package.json"
+    }
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "git://github.com/taylordennislee/ng2-semantic-ui.git#275b13fbe735d88ee219ed44bb780b9ec9517001",
+  "_shasum": "345432d1e589946bb8a180128d3c65881102d709",
+  "_shrinkwrap": null,
+  "_spec": "ng2-semantic-ui@github:taylordennislee/ng2-semantic-ui",
+  "_where": "/Users/taylorlee/sunrise/antani-cli",
+  "angular-cli": {},
+  "author": {
+    "name": "Edward Carroll"
+  },
+  "bugs": {
+    "url": "https://github.com/edcarroll/ng2-semantic-ui/tree/master/issues"
+  },
+  "dependencies": {
+    "@angular/common": "^2.0.0",
+    "@angular/compiler": "^2.0.0",
+    "@angular/core": "^2.0.0",
+    "@angular/forms": "^2.0.0",
+    "@angular/http": "^2.0.0",
+    "@angular/platform-browser": "^2.0.0",
+    "@angular/platform-browser-dynamic": "^2.0.0",
+    "@angular/router": "^3.0.0",
+    "core-js": "^2.4.1",
+    "reflect-metadata": "^0.1.3",
+    "rxjs": "^5.0.0-beta.12",
+    "ts-helpers": "^1.1.1",
+    "zone.js": "^0.6.21"
+  },
+  "description": "Angular 2 Semantic UI Components",
+  "devDependencies": {
+    "@types/jasmine": "^2.2.30",
+    "@types/prismjs": "^1.4.17",
+    "@types/protractor": "^1.5.16",
+    "@types/requirejs": "^2.1.26",
+    "angular-cli": "1.0.0-beta.15",
+    "codelyzer": "0.0.26",
+    "jasmine-core": "2.4.1",
+    "jasmine-spec-reporter": "2.5.0",
+    "karma": "0.13.22",
+    "karma-chrome-launcher": "0.2.3",
+    "karma-jasmine": "0.3.8",
+    "karma-remap-istanbul": "^0.2.1",
+    "prismjs": "^1.5.1",
+    "protractor": "3.3.0",
+    "ts-node": "1.2.1",
+    "tslint": "3.13.0",
+    "typescript": "~2.0.3"
+  },
+  "gitHead": "275b13fbe735d88ee219ed44bb780b9ec9517001",
+  "keywords": [
+    "angular",
+    "angular2",
+    "semantic-ui",
+    "semantic",
+    "ui",
+    "2"
+  ],
+  "license": "MIT",
+  "main": "ng2-semantic-ui.js",
+  "name": "ng2-semantic-ui",
+  "optionalDependencies": {},
+  "readme": "# ng2-semantic-ui\n\nSemantic UI Angular 2 Integrations, written in pure AngularJS - **no JQuery required**.\n\n## Demo & Usage\n\n[ng2-semantic-ui](http://edcarroll.github.io/ng2-semantic-ui/)\n\n## Installation\n\nTo install this library, run:\n```bash\n$ npm install ng2-semantic-ui --save\n```\n\nNext include the Semantic UI CSS file in your `index.html` (you can include a manually compiled one if you use themes):\n```html\n<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.min.css\">\n```\n\nOnce installed you need to import the main module:\n```ts\nimport {SuiModule} from 'ng2-semantic-ui/ng2-semantic-ui';\n```\n\nFinally import the main module into your application module:\n```ts\nimport {SuiModule} from 'ng2-semantic-ui/ng2-semantic-ui';\n\n@NgModule({\n    declarations: [AppComponent, ...],\n    imports: [SuiModule, ...],  \n    bootstrap: [AppComponent]\n})\nexport class AppModule {}\n```\n\nN.B. you can import individual component modules:\n```ts\nimport {SuiCheckboxModule, SuiRatingModule} from 'ng2-semantic-ui/ng2-semantic-ui';\n```\n\nNow you're good to go!\n\n## Dependencies\n\n* [Angular 2](https://angular.io) (^2.0.0 final)\n* [Semantic UI CSS](http://semantic-ui.com/) (jQuery is **not** required)\n\n## Components\n\nThe current list of available components with links to their docs is below:\n\n* [Accordion](http://edcarroll.github.io/ng2-semantic-ui/#/components/accordion)\n* [Checkbox](http://edcarroll.github.io/ng2-semantic-ui/#/components/checkbox)\n* [Collapse](http://edcarroll.github.io/ng2-semantic-ui/#/components/collapse)\n* [Dimmer](http://edcarroll.github.io/ng2-semantic-ui/#/components/dimmer)\n* [Dropdown](http://edcarroll.github.io/ng2-semantic-ui/#/components/dropdown)\n* [Message](http://edcarroll.github.io/ng2-semantic-ui/#/components/message)\n* [Progress](http://edcarroll.github.io/ng2-semantic-ui/#/components/progress)\n* [Rating](http://edcarroll.github.io/ng2-semantic-ui/#/components/rating)\n* [Search](http://edcarroll.github.io/ng2-semantic-ui/#/components/search)\n* [Select](http://edcarroll.github.io/ng2-semantic-ui/#/components/select)\n* [Tabs](http://edcarroll.github.io/ng2-semantic-ui/#/components/tabs)\n* [Transition](http://edcarroll.github.io/ng2-semantic-ui/#/components/transition)\n\n## Development\n\nTo generate all library `*.js`, `*.js.map` and `*.d.ts` files:\n\n```bash\n$ npm run compile\n# use compile:w to watch for changes\n```\n\nTo run the demo app (you must have [Angular-CLI](https://github.com/angular/angular-cli) installed):\n```bash\n$ ng serve\n```\n\n## License\n\nMIT © [Edward Carroll](https://github.com/edcarroll)\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/edcarroll/ng2-semantic-ui/tree/master"
+  },
+  "scripts": {
+    "compile": "tsc",
+    "compile:w": "tsc -w",
+    "lint": "tslint \"demo/**/*.ts\"",
+    "prepublish": "tsc",
+    "start": "ng serve"
+  },
+  "typings": "ng2-semantic-ui.d.ts",
+  "version": "0.4.6"
+}

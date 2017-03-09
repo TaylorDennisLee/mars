@@ -1,21 +1,22 @@
 <ng-sidebar-container>
   <ng-sidebar [(opened)]="_opened" [mode]="_MODES[_modeNum]" [keyClose]="_keyClose" [position]="_POSITIONS[_positionNum]" [dockedSize]="'50px'" [closeOnClickOutside]="_closeOnClickOutside" [showBackdrop]="_showBackdrop" [animate]="_animate" [trapFocus]="_trapFocus" [autoFocus]="_autoFocus" [sidebarClass]="'demo-sidebar'" [ariaLabel]="'My sidebar'" (onOpenStart)="_onOpenStart()" (onOpened)="_onOpened()" (onCloseStart)="_onCloseStart()" (onClosed)="_onClosed()" (onAnimationStart)="_onAnimationStart($event)" (onAnimationDone)="_onAnimationDone($event)">
-    <div class="ui sidebar vertical menu visible">
+    <div class="ui sidebar vertical menu visible attached">
       <div class="item">
         <a class="ui logo icon image">
           <img src="/src/assets/static/img/me_4.png">
         </a>
       </div>
-      <a class="item">Entry</a>
+      <a class="item" routerLink='/home'  routerLinkActive='active'>Home</a>
+      <a class="item" routerLink='/entry' routerLinkActive='active'>Entry</a>
       <a class="item">Search</a>
 
     </div>
-    <p><a closeSidebar>This will close the sidebar too</a></p>
   </ng-sidebar>
-  <header class="demo-header ui top attached menu">
-    <button (click)="_toggleOpened()" class="demo-header__toggle">Toggle sidebar</button>
-    <span>ACM Interface</span>
-  </header>
+  <div class="ui top menu">
+    <div class="ui icon item dropdown" (click)="_toggleOpened()">
+      <i class="content icon"></i>
+    </div>
+  </div>
   <section class="demo-contents">
     <h1>Controls</h1>
     <button class="demo-control" (click)="_toggleOpened()">opened ({{_opened}})</button>
@@ -36,4 +37,5 @@
     <p>Sit on human gnaw the corn cob but lounge in doorway yet ears back wide eyed. Hide when guests come over rub face on everything, fall asleep on the washing machine you call this cat food? for wake up wander around the house making large amounts of noise jump on top of your human's bed and fall asleep again for spread kitty litter all over house. If it fits, i sits eat grass, throw it back up stick butt in face. Peer out window, chatter at birds, lure them to mouth. Put toy mouse in food bowl run out of litter box at full speed inspect anything brought into the house, for eat prawns daintily with a claw then lick paws clean wash down prawns with a lap of carnation milk then retire to the warmest spot on the couch to claw at the fabric before taking a catnap chase laser. Human give me attention meow spit up on light gray carpet instead of adjacent linoleum for hunt by meowing loudly at 5am next to human slave food dispenser thinking longingly about tuna brine. Asdflkjaertvlkjasntvkjn (sits on keyboard) stare at the wall, play with food and get confused by dust flop over need to chase tail damn that dog so mew get video posted to internet for chasing red dot. Groom yourself 4 hours - checked, have your beauty sleep 18 hours - checked, be fabulous for the rest of the day - checked! cats go for world domination for stare at ceiling, or purr while eating yet kitty loves pigs.</p>
     <p>Text from <a href="http://www.catipsum.com/">Cat Ipsum</a>.</p>
   </section>
+  <router-outlet></router-outlet>
 </ng-sidebar-container>

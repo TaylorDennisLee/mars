@@ -1,11 +1,9 @@
 import { Component, OnDestroy, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { FormControl, FormGroup, FormArray, FormBuilder } from '@angular/forms';
-// import { NewEntryService } from './newentry.service';
-// import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
-import { FlatpickrOptions } from '../flatpickr';
+import { FlatpickrOptions } from '../flat';
 
 import { Field } from './field.model';
 import { EntryService } from './entry.service';

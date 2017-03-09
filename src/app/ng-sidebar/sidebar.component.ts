@@ -10,7 +10,8 @@ import {
   Output,
   SimpleChanges,
   ViewChild,
-  ViewEncapsulation
+  ViewEncapsulation,
+  HostListener
 } from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
 import { Subscription } from 'rxjs/Subscription';
@@ -288,7 +289,14 @@ export class Sidebar implements OnChanges, OnDestroy {
     }
   }
 
-
+@HostListener("window:scroll", [])
+onWindowScroll() {
+  if (this.opened)
+    {
+    this.close();
+    }
+ //we'll do some stuff here when the window is scrolled
+}
   // Focus on open/close
   // ==============================================================================================
 

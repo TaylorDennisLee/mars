@@ -11,7 +11,7 @@
     <div *ngSwitchCase="'datetime'">
       <div class="field" [formGroupName]="i">
         <label>{{field.field_order}}. {{field.field_name}}</label>
-        <cco-flatpickr #flatpickr [options]="foptions" formControlName="field_value"></cco-flatpickr>
+        <cco-flatpickr #flatpickr formControlName="field_value"></cco-flatpickr>
       </div>
     </div>
 

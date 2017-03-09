@@ -1,0 +1,51 @@
+import { ElementRef, TemplateRef, AfterContentInit, AfterViewInit, EventEmitter } from '@angular/core';
+import { ControlValueAccessor } from '@angular/forms';
+import { SuiInputSelectOption } from "./inputselect-option";
+export declare class SuiInputSelect implements AfterContentInit, AfterViewInit {
+    private el;
+    private _dropdownMenu;
+    private _dropdownService;
+    private _searchService;
+    private selectedOptionContainer;
+    private renderedOptions;
+    private renderedOptionsSubscriptions;
+    selectedOption: any;
+    searchClasses: boolean;
+    tabIndex: number;
+    isSearchable: boolean;
+    placeholder: string;
+    options: any[];
+    displayField: string;
+    keyField: string;
+    private query;
+    selectedOptionChange: EventEmitter<any>;
+    onItemSelected: EventEmitter<any>;
+    optionTemplate: TemplateRef<any>;
+    readonly isActive: boolean;
+    isOpen: boolean;
+    isDisabled: boolean;
+    private readonly results;
+    private readonly availableOptions;
+    constructor(el: ElementRef);
+    ngAfterContentInit(): void;
+    ngAfterViewInit(): void;
+    private renderedOptionsSubscribe();
+    private renderSelectedItem();
+    selectOption(option: any): void;
+    private focusSearch();
+    private focusFirstItem();
+    writeValue(value: any): void;
+    click(event: MouseEvent): boolean;
+    keypress(event: KeyboardEvent): void;
+}
+export declare const CUSTOM_VALUE_ACCESSOR: any;
+export declare class SuiInputSelectValueAccessor implements ControlValueAccessor {
+    private host;
+    onChange: () => void;
+    onTouched: () => void;
+    constructor(host: SuiInputSelect);
+    writeValue(value: any): void;
+    registerOnChange(fn: () => void): void;
+    registerOnTouched(fn: () => void): void;
+}
+export declare const SUI_INPUT_SELECT_DIRECTIVES: (typeof SuiInputSelect | typeof SuiInputSelectOption | typeof SuiInputSelectValueAccessor)[];
