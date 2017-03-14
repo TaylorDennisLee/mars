@@ -31,12 +31,13 @@
     <div *ngSwitchCase="'radio'">
       <div class="field" [formGroupName]="i">
         <label>{{field.field_order}}. {{field.field_name}}</label>
-        <app-radiogroup formControlName="field_value" [radio_options]="field.radio_options"></app-radiogroup>
+        <div class="ui buttons" >
+          <button *ngFor="let option of field.radio_options" type="button" class="ui button">
+            {{option}}
+          </button>
+        </div>
       </div>
     </div>
-
-
-
     <div *ngSwitchCase="'drop_down'">
       <div class="field" [formGroupName]="i">
         <label>{{field.field_order}}. {{field.field_name}}</label>

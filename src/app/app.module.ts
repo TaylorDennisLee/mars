@@ -5,6 +5,8 @@ import { HttpModule } from '@angular/http';
 import { Router } from '@angular/router';
 
 
+// import { RadiogroupComponent } from './radiogroup/radiogroup.component';
+import { RadiogroupModule } from './radiogroup';
 
 import { SuiModule} from './ng2-semantic-ui/ng2-semantic-ui';
 import { FlatpickrModule } from './flat/flatpickr.module';
@@ -19,13 +21,17 @@ import { SidebarModule } from './ng-sidebar';
 
 import { EntryComponent } from './entry/entry.component';
 import { AdditionalFieldComponent } from './entry/additionalfield/additionalfield.component';
+import { EntrySelectComponent } from './entry-select/entry-select.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     EntryComponent,
-    AdditionalFieldComponent
+    AdditionalFieldComponent,
+    EntrySelectComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +40,8 @@ import { AdditionalFieldComponent } from './entry/additionalfield/additionalfiel
     SidebarModule,
     AppRoutingModule,
     FlatpickrModule,
-    SuiModule
+    SuiModule,
+    RadiogroupModule
   ],
   providers: [],
   bootstrap: [AppComponent]

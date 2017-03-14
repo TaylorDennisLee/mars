@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angualr/forms';
-import { RadioOptions
+import { ReactiveFormsModule } from '@angular/forms';
+import { ColorDirective } from './color.directive';
+
+import { RadiogroupComponent } from  './radiogroup.component';
 
 
 @NgModule({
@@ -9,6 +11,7 @@ import { RadioOptions
     CommonModule,
     ReactiveFormsModule
   ],
-  declarations: []
+  declarations: [ColorDirective, RadiogroupComponent],
+  exports: [ColorDirective, RadiogroupComponent],
 })
 export class RadiogroupModule { }

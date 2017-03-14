@@ -85,23 +85,49 @@ export class Sidebar implements OnChanges, OnDestroy {
   // `openedChange` allows for "2-way" data binding
   @Input() opened: boolean = false;
   @Output() openedChange: EventEmitter<boolean> = new EventEmitter<boolean>();
-
-  @Input() mode: 'over' | 'push' | 'dock' = 'over';
+  
+  // Fix 1
+  // @Input() mode: 'over' | 'push' | 'dock' = 'over';
+  mode = 'over';
+  
+  // Exclude 1
   @Input() dockedSize: string = '0px';
-  @Input() position: 'start' | 'end' | 'left' | 'right' | 'top' | 'bottom' = 'start';
-  @Input() animate: boolean = true;
+  
+  // Fix 2
+  // @Input() position: 'start' | 'end' | 'left' | 'right' | 'top' | 'bottom' = 'start';
+  position = 'left';
+
+  // Fix 3
+  // @Input() animate: boolean = true;
+  animate = true;
 
   @Input() sidebarClass: string;
 
   @Input() ariaLabel: string;
-  @Input() trapFocus: boolean = true;
-  @Input() autoFocus: boolean = true;
+  
+  // Fix 4
+  // @Input() trapFocus: boolean = true;
+  trapFocus = false;
+  
+  // @Input() autoFocus: boolean = true;
+  autoFocus = false;
+
 
   @Input() showBackdrop: boolean = false;
-  @Input() closeOnClickOutside: boolean = false;
+  
+  // Fix 5
+  // @Input() closeOnClickOutside: boolean = false;
+  closeOnClickOutside = true;
 
-  @Input() keyClose: boolean = false;
-  @Input() keyCode: number = 27;  // Default to ESCAPE key
+  // Fix 6
+  // @Input() keyClose: boolean = false;
+  keyClose = false;
+  
+
+  // Fix 7
+  // @Input() keyCode: number = 27;  // Default to ESCAPE key
+  keyCode = 27;
+
 
   @Output() onOpenStart: EventEmitter<null> = new EventEmitter<null>();
   @Output() onOpened: EventEmitter<null> = new EventEmitter<null>();

@@ -12,7 +12,7 @@ export class RadiogroupComponent implements ControlValueAccessor, OnChanges {
 
 
   @Input('radio_options') radio_options : any;
-  activeIndex : number = -1;
+
   propagateChange:any = () => {};
 
   _selected_button;
@@ -24,7 +24,6 @@ export class RadiogroupComponent implements ControlValueAccessor, OnChanges {
 
   set selected_button(val)
   {
-
     this._selected_button = val;
     console.log(val);
     this.propagateChange(val);
@@ -33,7 +32,6 @@ export class RadiogroupComponent implements ControlValueAccessor, OnChanges {
   thisIndex(i)
   {
     console.log(i);
-    this.activeIndex = i;
   }
 
   ngOnChanges()
@@ -41,9 +39,13 @@ export class RadiogroupComponent implements ControlValueAccessor, OnChanges {
     this.propagateChange(this.selected_button);
   }
 
+
   constructor() { }
 
+  ngOnInit()
+  {
     
+  }
 
   writeValue(value) {
     if (value) {

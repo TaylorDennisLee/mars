@@ -9,7 +9,7 @@ export class EntryService {
     constructor (private http: Http) {}
 
     getFields(): Observable<Field[]> {
-        return this.http.get('../../assets/json/sample.json')
+        return this.http.get('../../assets/static/final_json/new_acm_DSC_fields.json')
         .map(res => res.json());
     }
 

@@ -5,6 +5,7 @@ import { FlatpickrComponent } from './flatpickr.component';
 
 export { Flatpickr, FlatpickrOptions } from './models'
 
+
 @NgModule({
     imports: [
         CommonModule,

@@ -47,20 +47,26 @@ export class EntryComponent implements  OnInit{
   loadForm() {
       const control = <FormArray> this.entry_form;
 
-      // for( let field of this.fields)
-      for (let index in this.fields)
+      for( let field of this.fields)
       {
-          console.log("Adding " + this.fields[index].field_name);
-          switch(this.fields[index].field_type)
+          console.log("Adding " + field.field_name);
+          switch(field.field_type)
           {
-              case "numeric": {
-                  control.push(this.createNumericFormGroup(index));
+              case "text":
+                  control.push(this.createTextFormGroup(field));
                   break;
-              }
-              default: {
-                  control.push(this.createBasicFormGroup(index));
+              case "numeric":
+                  control.push(this.createNumericFormGroup(field))
                   break;
-              }
+              case "radio":
+                  control.push(this.createTextFormGroup(field))
+                  break;
+              case "drop_down":
+                  control.push(this.createTextFormGroup(field))
+                  break;
+              case "datetime":
+                  control.push(this.createTextFormGroup(field))
+                  break;
           }
 
       }
@@ -71,7 +77,7 @@ export class EntryComponent implements  OnInit{
       const new_field = this.createNewAddiField();
       const control = <FormArray>this.entry_form;
       this.fields.push(new_field);
-      control.push(this.createNewBasicFormGroup(new_field));
+      control.push(this.createBasicFormGroup(new_field));
   }
 
   removeField(i: number) {
@@ -98,38 +104,35 @@ export class EntryComponent implements  OnInit{
   }
 
 
-  createBasicFormGroup(thisindex: string)
-  { 
-    let thisField = this.fields[thisindex];
-    return new FormGroup({
-      field_type: new FormControl(thisField.field_type),
-      field_name: new FormControl(thisField.field_name),
-      field_order: new FormControl(Number(thisindex) + 1),
-      field_value: new FormControl('')
-
-    });
-  }
-
-  createNumericFormGroup(thisindex: string)
-  {
-    let thisField = this.fields[thisindex];
-    return new FormGroup({
-      field_type: new FormControl(thisField.field_type),
-      field_name: new FormControl(thisField.field_name),
-      field_order: new FormControl(Number(thisindex) + 1),
-      field_value: new FormControl(''),
-      field_unit: new FormControl(thisField.standard_unit)
-
-    });
-  }
-
-  createNewBasicFormGroup(thisfield: Field)
+  createBasicFormGroup(thisfield: Field)
   {
     return new FormGroup({
       field_type: new FormControl(thisfield.field_type),
       field_name: new FormControl(thisfield.field_name),
       field_order: new FormControl(thisfield.field_order),
       field_value: new FormControl('')
+
+    });
+  }
+  createTextFormGroup(thisfield: Field)
+  {
+    return new FormGroup({
+      field_type: new FormControl(thisfield.field_type),
+      field_name: new FormControl(thisfield.field_name),
+      field_order: new FormControl(thisfield.field_order),
+      field_value: new FormControl('')
+
+    });
+  }
+
+  createNumericFormGroup(thisfield: Field)
+  {
+    return new FormGroup({
+      field_type: new FormControl(thisfield.field_type),
+      field_name: new FormControl(thisfield.field_name),
+      field_order: new FormControl(thisfield.field_order),
+      field_value: new FormControl(''),
+      field_unit: new FormControl(thisfield.standard_unit)
 
     });
   }

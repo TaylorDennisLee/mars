@@ -10,9 +10,8 @@ import { FormControl, ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/f
 export class RadiogroupComponent implements ControlValueAccessor, OnChanges {
 
 
+  @Input options : any;
 
-  @Input('radio_options') radio_options : any;
-  activeIndex : number = -1;
   propagateChange:any = () => {};
 
   _selected_button;
@@ -24,16 +23,8 @@ export class RadiogroupComponent implements ControlValueAccessor, OnChanges {
 
   set selected_button(val)
   {
-
     this._selected_button = val;
-    console.log(val);
     this.propagateChange(val);
-  }
-
-  thisIndex(i)
-  {
-    console.log(i);
-    this.activeIndex = i;
   }
 
   ngOnChanges()
@@ -41,9 +32,8 @@ export class RadiogroupComponent implements ControlValueAccessor, OnChanges {
     this.propagateChange(this.selected_button);
   }
 
-  constructor() { }
 
-    
+  constructor() { }
 
   writeValue(value) {
     if (value) {
