@@ -8,8 +8,9 @@ import { Field } from './field.model';
 export class EntryService {
     constructor (private http: Http) {}
 
-    getFields(): Observable<Field[]> {
-        return this.http.get('../../assets/static/final_json/new_acm_DSC_fields.json')
+    getFields(form_id: string): Observable<Field[]> {
+        console.log("In Entry Service, getting: " + form_id);
+        return this.http.get('../../assets/static/final_json/new_acm_'+form_id+'_fields.json')
         .map(res => res.json());
     }
 

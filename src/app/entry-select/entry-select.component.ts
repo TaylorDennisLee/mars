@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormArray, FormBuilder } from '@angular/forms';
 
-
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-entry-select',
@@ -10,15 +10,23 @@ import { FormControl, FormGroup, FormArray, FormBuilder } from '@angular/forms';
 })
 export class EntrySelectComponent implements OnInit {
 
+
   form_options = ['DSC','FF','Flashforge','LFA','TGA','Wanhao'];
-  select_form: FormGroup;
-  constructor() { }
+  public selected_form:any;
+  constructor(
+     private route: ActivatedRoute,
+    private router: Router 
+  
+  ) { }
 
   ngOnInit() {
-    this.select_form = new FormGroup({selected_form: new FormControl('')});
 //    this.loadForms();
   }
 
+
+  choose() {
+    this.router.navigate(['/entry', this.selected_form]);
+  }
   
 
 }

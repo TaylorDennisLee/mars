@@ -15,6 +15,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent, pathMatch: 'full' },
 
   { path: 'entry',  component: EntrySelectComponent },
+  { path: 'entry/:form_id', component: EntryComponent }
 ];
 
 @NgModule({

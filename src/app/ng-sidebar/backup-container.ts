@@ -11,11 +11,7 @@ import {
   Output,
   SimpleChanges,
   QueryList,
-  ViewEncapsulation,
-  trigger,
-  transition,
-  style,
-  animate
+  ViewEncapsulation
 } from '@angular/core';
 
 import { Sidebar } from './sidebar.component';
@@ -23,30 +19,10 @@ import { Sidebar } from './sidebar.component';
 // Based on https://github.com/angular/material2/tree/master/src/lib/sidenav
 @Component({
   selector: 'ng-sidebar-container',
-  animations: [
-    trigger(
-      'startDimmer',
-      [
-        transition(':enter',
-          [
-            style({ opacity: 0 }),
-            animate('300ms', style({ opacity: 0.75 }))
-          ]
-        ),
-        transition(':leave',
-          [
-            style({ opacity: 0.75 }),
-            animate('180ms', style({ opacity: 0 }))
-          ]
-        )
-      ]
-    )
-  ],
   template: `
     <ng-content select="ng-sidebar"></ng-content>
 
     <div *ngIf="showBackdrop"
-      [@startDimmer]="showBackdrop"
       aria-hidden="true"
       class="ng-sidebar__backdrop"
       [ngClass]="backdropClass"></div>
@@ -94,7 +70,7 @@ export class SidebarContainer implements AfterContentInit, OnChanges, OnDestroy 
   @ContentChildren(Sidebar)
   _sidebars: QueryList<Sidebar>;
 
-  constructor(private _ref: ChangeDetectorRef) { }
+  constructor(private _ref: ChangeDetectorRef) {}
 
   ngAfterContentInit(): void {
     this._subscribe();
@@ -124,9 +100,9 @@ export class SidebarContainer implements AfterContentInit, OnChanges, OnDestroy 
    */
   _getStyles(): CSSStyleDeclaration {
     let left = 0,
-      right = 0,
-      top = 0,
-      bottom = 0;
+        right = 0,
+        top = 0,
+        bottom = 0;
 
     if (this._sidebars) {
       this._sidebars.forEach((sidebar: Sidebar) => {

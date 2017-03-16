@@ -1,7 +1,7 @@
 <div class="ui relaxed list celled">
   <div class="item">
     <div class="right floated content">
-      <sui-radio-button class="toggle" [(ngModel)]="selected_form" value="DSC"></sui-radio-button>
+      <sui-radio-button class="toggle" [(ngModel)]="radio" value="DSC"></sui-radio-button>
     </div>
     <i class="large file middle aligned icon"></i>
     <div class="content">
@@ -9,19 +9,19 @@
       <div class="description">acm_dsc.json</div>
     </div>
   </div>
-  <div class="item">
+  <div class="item" (click)="radio='FF'">
      <div class="right floated content">
-      <sui-radio-button class="toggle" [(ngModel)]="selected_form" value="FF"></sui-radio-button>
+      <sui-radio-button class="toggle" [(ngModel)]="radio" value="FF"></sui-radio-button>
     </div>
     <i class="large file middle aligned icon"></i>
     <div class="content">
-      <a class="header" (click)="selected_form='FF'" >FF</a>
+      <a class="header" (click)="radio='FF'" >FF</a>
       <div class="description">acm_ff.json</div>
     </div>
   </div>
   <div class="item">
     <div class="right floated content">
-      <sui-radio-button class="toggle" [(ngModel)]="selected_form" value="Flashforge"></sui-radio-button>
+      <sui-radio-button class="toggle" [(ngModel)]="radio" value="Flash Forge"></sui-radio-button>
     </div>
     <i class="large file middle aligned icon"></i>
     <div class="content">
@@ -31,7 +31,7 @@
   </div>
   <div class="item">
     <div class="right floated content">
-      <sui-radio-button class="toggle" [(ngModel)]="selected_form" value="LFA"></sui-radio-button>
+      <sui-radio-button class="toggle" [(ngModel)]="radio" value="LFA"></sui-radio-button>
     </div>
     <i class="large file middle aligned icon"></i>
     <div class="content">
@@ -41,7 +41,7 @@
   </div>
   <div class="item">
     <div class="right floated content">
-      <sui-radio-button class="toggle" [(ngModel)]="selected_form" value="TGA"></sui-radio-button>
+      <sui-radio-button class="toggle" [(ngModel)]="radio" value="TGA"></sui-radio-button>
     </div>
     <i class="large file middle aligned icon"></i>
     <div class="content">
@@ -51,7 +51,7 @@
   </div>
   <div class="item">
     <div class="right floated content">
-      <sui-radio-button class="toggle" [(ngModel)]="selected_form" value="Wanhao"></sui-radio-button>
+      <sui-radio-button class="toggle" [(ngModel)]="radio" value="Wanhao"></sui-radio-button>
     </div>
     <i class="large file middle aligned icon"></i>
     <div class="content">
@@ -60,8 +60,6 @@
     </div>
   </div>
 </div>
-
-
 
 <table class="ui compact celled selectable definition table">
   <thead>
@@ -85,7 +83,7 @@
     </tr>
     <tr>
       <td class="collapsing">
-        <sui-radio-button class="toggle" [(ngModel)]="radio" value="Flashforge"></sui-radio-button>
+        <sui-radio-button class="toggle" [(ngModel)]="radio" value="FlashForge"></sui-radio-button>
       </td>
       <td><h4>Flashforge</h4></td>
     </tr>
@@ -112,12 +110,10 @@
     <tr>
       <th></th>
       <th colspan="4">
-        <div (click)="choose()" class="ui right floated small positive labeled icon button">
+        <div class="ui right floated small positive labeled icon button">
           <i class="user icon"></i> Create New Entry
         </div>
       </th>
     </tr>
   </tfoot>
 </table>
-
-<pre>form value: <br>{{selected_form | json}}</pre>

@@ -112,8 +112,10 @@ export class Sidebar implements OnChanges, OnDestroy {
   // @Input() autoFocus: boolean = true;
   autoFocus = false;
 
-
-  @Input() showBackdrop: boolean = false;
+  // Temporary Change 1: false -> true
+  @Input() showBackdrop: boolean = true;
+  // showBackdrop = true;
+  
   
   // Fix 5
   // @Input() closeOnClickOutside: boolean = false;

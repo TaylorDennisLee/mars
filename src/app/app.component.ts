@@ -13,7 +13,7 @@ export class AppComponent {
   private _modeNum: number = 0;
   private _positionNum: number = 0;
   private _closeOnClickOutside: boolean = false;
-  private _showBackdrop: boolean = false;
+  private _showBackdrop: boolean = true;
   private _animate: boolean = true;
   private _trapFocus: boolean = true;
   private _autoFocus: boolean = true;

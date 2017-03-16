@@ -1,8 +1,9 @@
-import { Component, OnDestroy, OnInit, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, OnChanges, OnDestroy, SimpleChanges } from '@angular/core';
 import { FormControl, FormGroup, FormArray, FormBuilder } from '@angular/forms';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-
+import 'rxjs/add/operator/switchMap';
 import { FlatpickrOptions } from '../flat';
 
 import { Field } from './field.model';
@@ -18,39 +19,64 @@ import { AdditionalFieldComponent } from './additionalfield/additionalfield.comp
   providers: [ EntryService ]
 })
 
-export class EntryComponent implements  OnInit{
+export class EntryComponent implements OnInit, OnDestroy {
 
   flat_options : FlatpickrOptions;
   public entry_form: FormArray;
   fields$: Observable<Field[]>;
   fields: Field[];
-
-  constructor(private entry_service: EntryService) {
+  form_name: string;
+  private sub: any;
+  constructor(
+              private entry_service: EntryService,
+              private route: ActivatedRoute,
+              private router: Router
+             ) {
     this.entry_form = new FormArray([]);
     this.flat_options = {allowInput: true, enableTime: true};
     }
 
   ngOnInit() {
-
+    this.sub = this.route.params.subscribe(
+      params => 
+      {
+        this.form_name = params['form_id'];
+        console.log("Form Name: " + this.form_name);
+      
+      },
+      error  => console.log("Error: " + error),
+      ()     => console.log("finished")
+    );
     this.getForm();
+  }
+  
+  ngOnDestroy()
+  {
+    this.sub.unsubscribe();
   }
 
 
   getForm() {
-      this.fields$ = this.entry_service.getFields();
-      this.fields$.subscribe(fields => this.fields = fields,
-                              error => console.log("Error: " + error),
-                                 () => this.loadForm()
-      );
-  }
+    console.log('Getting Form!');
+    console.log(this.form_name);
+    // this.form_name = this.route.params['form_id'];
+    // this.fields$ = this.route.params.switchMap((params: Params) => this.entry_service.getFields(params['form_id']));
+    this.fields$ = this.entry_service.getFields(this.form_name);   
+          
+          this.fields$.subscribe(fields => this.fields = fields,
+                      error => console.log("Error: " + error),
+                         () => this.loadForm()
+                   );
+            }
 
   loadForm() {
+      console.log('loading here');
       const control = <FormArray> this.entry_form;
-
+      console.log('loading form');
       // for( let field of this.fields)
       for (let index in this.fields)
       {
-          console.log("Adding " + this.fields[index].field_name);
+//          console.log("Adding " + this.fields[index].field_name);
           switch(this.fields[index].field_type)
           {
               case "numeric": {
