@@ -11,7 +11,7 @@
     <div *ngSwitchCase="'datetime'">
       <div class="field" [formGroupName]="i">
         <label>{{field.field_order}}. {{field.field_name}}</label>
-        <cco-flatpickr #flatpickr formControlName="field_value"></cco-flatpickr>
+        <cco-flatpickr #flatpickr formControlName="field_value" placeholder="Select Date/Time"></cco-flatpickr>
       </div>
     </div>
 
@@ -60,12 +60,8 @@
 
 
 
-  <button  type="button" (click)="addField()">Add Field</button>
-  <button type="button" (click)="addField()">Clear name</button>
+  <button class="ui primary button basic" type="button" (click)="addField()">Add Field</button>
+  <button class="ui positive button basic" type="button">Submit</button>
 </form>
 <br><br>
-<button id="my-logout-button" md-raised-button color="accent" (click)="logout()">Logout</button>
 <pre>form value: <br>{{entry_form.value | json}}</pre>
-<div class="field" style="width: 100%" [ngSwitch]="field.field_type" *ngFor="let field of fields; let i = index">
-  <p>{{field.field_name}}</p>
-</div>

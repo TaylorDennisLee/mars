@@ -22,6 +22,7 @@ import { SidebarModule } from './ng-sidebar';
 import { EntryComponent } from './entry/entry.component';
 import { AdditionalFieldComponent } from './entry/additionalfield/additionalfield.component';
 import { EntrySelectComponent } from './entry-select/entry-select.component';
+import { SelectEntryComponent } from './select-entry/select-entry.component';
 
 
 
@@ -31,7 +32,8 @@ import { EntrySelectComponent } from './entry-select/entry-select.component';
     HomeComponent,
     EntryComponent,
     AdditionalFieldComponent,
-    EntrySelectComponent
+    EntrySelectComponent,
+    SelectEntryComponent
   ],
   imports: [
     BrowserModule,

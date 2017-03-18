@@ -1,0 +1,70 @@
+<h1 class="ui header">Select Form</h1>
+<div class="ui relaxed list celled">
+  <div class="item">
+    <div class="right floated content">
+      <sui-radio-button class="toggle" [(ngModel)]="selected_form" value="DSC"></sui-radio-button>
+    </div>
+    <i class="large file middle aligned icon"></i>
+    <div class="content">
+      <a class="header" (click)="selected_form='DSC'" >DSC</a>
+      <div class="description">acm_dsc.json</div>
+    </div>
+  </div>
+  <div class="item">
+     <div class="right floated content">
+      <sui-radio-button class="toggle" [(ngModel)]="selected_form" value="FF"></sui-radio-button>
+    </div>
+    <i class="large file middle aligned icon"></i>
+    <div class="content">
+      <a class="header" (click)="selected_form='FF'" >FF</a>
+      <div class="description">acm_ff.json</div>
+    </div>
+  </div>
+  <div class="item">
+    <div class="right floated content">
+      <sui-radio-button class="toggle" [(ngModel)]="selected_form" value="Flashforge"></sui-radio-button>
+    </div>
+    <i class="large file middle aligned icon"></i>
+    <div class="content">
+      <a class="header" (click)="selected_form='Flashforge'" >Flashforge</a>
+      <div class="description">acm_flashforge.json</div>
+    </div>
+  </div>
+  <div class="item">
+    <div class="right floated content">
+      <sui-radio-button class="toggle" [(ngModel)]="selected_form" value="LFA"></sui-radio-button>
+    </div>
+    <i class="large file middle aligned icon"></i>
+    <div class="content">
+      <a class="header" (click)="selected_form='LFA'">LFA</a>
+      <div class="description">acm_lfa.json</div>
+    </div>
+  </div>
+  <div class="item">
+    <div class="right floated content">
+      <sui-radio-button class="toggle" [(ngModel)]="selected_form" value="TGA"></sui-radio-button>
+    </div>
+    <i class="large file middle aligned icon"></i>
+    <div class="content">
+      <a class="header" (click)="selected_form='TGA'" >TGA</a>
+      <div class="description">acm_tga.json</div>
+    </div>
+  </div>
+  <div class="item">
+    <div class="right floated content">
+      <sui-radio-button class="toggle" [(ngModel)]="selected_form" value="Wanhao"></sui-radio-button>
+    </div>
+    <i class="large file middle aligned icon"></i>
+    <div class="content">
+      <a class="header" (click)="selected_form='Wanhao'">Wanhao</a>
+      <div class="description">acm_wanhao.json</div>
+    </div>
+  </div>
+</div>
+
+
+
+<div (click)="choose()" class="ui right floated small positive labeled icon button">
+  <i class="user icon"></i> Create New Entry
+</div>
+<pre>form value: <br>{{selected_form | json}}</pre>
