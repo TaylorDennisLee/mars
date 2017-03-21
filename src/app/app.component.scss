@@ -5,6 +5,17 @@
 
 $fonts: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
 
+@font-face {
+
+  font-family: Futura-Normal;
+  src: url('../assets/fonts/Futura Regular.ttf');
+
+}
+
+
+
+@font-face { font-family: ZYPHYTE; src: url('../assets/fonts/Zyphyte.ttf');} 
+
 // $brand: #0273d4;
 
 $brand: #c5050c; 
@@ -21,6 +32,16 @@ $uw-body-font: #494949;
 $uw-anchor-color: #0479a8;
 $uw-gray-footer-text: #adadad;
 $uw-gray-footer-text-hover: #f9f9f9;
+
+
+.ui.top.menu {
+background-image: url('../assets/img/uw-crest-web.png');
+background-repeat: no-repeat;
+background-position: 56px -5px;
+background-size: 80px;
+}
+
+
 
 * {
   box-sizing: border-box;
@@ -57,6 +78,12 @@ a {
   }
 }
 
+a.ui.logo.icon.image {
+  margin:auto;
+  padding-left: 38px;
+
+}
+
 p {
   margin-bottom: 1em;
 }
@@ -73,10 +100,31 @@ h1 {
   padding: 1em;
 }
 
-.ui.menu span.item {color: $uw-page-bg;}
+.ui.menu span.item {color: $uw-page-bg;
+
+   padding-top: 8px;
+   padding-bottom: 5px;
+
+}
 .ui.menu span.item:before {width: 0px;}
 
 // div.ui.icon.item:after {width:1px;}
+
+
+.acm-title {
+  font-family: Futura-Normal, 'Trebuchet MS', Arial, sans-serif;
+  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+   padding-left: 90px;
+
+   font-size: 30px;
+
+
+}
+
+img.uw-crest-web {
+  width: 80px;
+}
+
 
 
 .demo-header {

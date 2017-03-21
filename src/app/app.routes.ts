@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { HomeComponent }   from './home/home.component';
 
-import { EntryComponent }   from './entry/entry.component';
+import { NewEntryComponent }   from './new-entry/new-entry.component';
 
 import { EntrySelectComponent } from './entry-select/entry-select.component';
 import { SelectEntryComponent } from './select-entry/select-entry.component';
@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent, pathMatch: 'full' },
 
   { path: 'entry',  component: SelectEntryComponent },
-  { path: 'entry/:form_id', component: EntryComponent }
+  { path: 'entry/:form_id', component: NewEntryComponent }
 ];
 
 @NgModule({

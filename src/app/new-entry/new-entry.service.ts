@@ -5,7 +5,7 @@ import {Observable} from 'rxjs/Observable';
 import { Field } from './field.model';
 
 @Injectable()
-export class EntryService {
+export class NewEntryService {
     constructor (private http: Http) {}
 
     getFields(form_id: string): Observable<Field[]> {

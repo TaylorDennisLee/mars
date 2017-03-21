@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 import { RadiogroupModule } from './radiogroup';
 
 import { SuiModule} from './ng2-semantic-ui/ng2-semantic-ui';
-import { FlatpickrModule } from './flat/flatpickr.module';
+// import { FlatpickrModule } from './flat/flatpickr.module';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -18,21 +18,23 @@ import { AppRoutingModule } from './app.routes';
 
 import { SidebarModule } from './ng-sidebar';
 
+import { PouchDBService } from './pouchdb.service';
 
-import { EntryComponent } from './entry/entry.component';
-import { AdditionalFieldComponent } from './entry/additionalfield/additionalfield.component';
-import { EntrySelectComponent } from './entry-select/entry-select.component';
+// import { EntryComponent } from './entry/entry.component';
+// import { AdditionalFieldComponent } from './entry/additionalfield/additionalfield.component';
+// import { EntrySelectComponent } from './entry-select/entry-select.component';
 import { SelectEntryComponent } from './select-entry/select-entry.component';
 
+import { NewEntryModule } from './new-entry/new-entry.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    EntryComponent,
-    AdditionalFieldComponent,
-    EntrySelectComponent,
+//    EntryComponent,
+//    AdditionalFieldComponent,
+//    EntrySelectComponent,
     SelectEntryComponent
   ],
   imports: [
@@ -42,11 +44,12 @@ import { SelectEntryComponent } from './select-entry/select-entry.component';
     HttpModule,
     SidebarModule,
     AppRoutingModule,
-    FlatpickrModule,
+//    FlatpickrModule,
     SuiModule,
-    RadiogroupModule
+//    RadiogroupModule,
+    NewEntryModule
   ],
-  providers: [],
+  providers: [PouchDBService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,25 +1,26 @@
-import { Component, OnInit, OnChanges, OnDestroy, SimpleChanges } from '@angular/core';
+import { Component, OnInit, OnChanges, OnDestroy, SimpleChanges, NgZone } from '@angular/core';
 import { FormControl, FormGroup, FormArray, FormBuilder } from '@angular/forms';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import 'rxjs/add/operator/switchMap';
-import { FlatpickrOptions } from '../flat';
+import { FlatpickrOptions } from './flat';
 
 import { Field } from './field.model';
-import { EntryService } from './entry.service';
+import { NewEntryService } from './new-entry.service';
 import { AdditionalFieldComponent } from './additionalfield/additionalfield.component';
 
+// import { PouchDBService } from '../pouchdb.service';
 
 
 @Component({
-  selector: 'entry',
-  templateUrl: './entry.component.html',
-  styleUrls: ['./entry.component.scss'],
-  providers: [ EntryService ]
+  selector: 'new-entry',
+  templateUrl: './new-entry.component.html',
+  styleUrls: ['./new-entry.component.scss'],
+  providers: [ NewEntryService ]
 })
 
-export class EntryComponent implements OnInit, OnDestroy {
+export class NewEntryComponent implements OnInit, OnDestroy {
 
   flat_options : FlatpickrOptions;
   public entry_form: FormArray;
@@ -28,13 +29,15 @@ export class EntryComponent implements OnInit, OnDestroy {
   form_name: string;
   private sub: any;
   constructor(
-              private entry_service: EntryService,
+              private entry_service: NewEntryService,
               private route: ActivatedRoute,
-              private router: Router
-             ) {
+              private router: Router,
+             ) 
+             {
     this.entry_form = new FormArray([]);
     this.flat_options = {allowInput: true, enableTime: true};
-    }
+    
+             }
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(
