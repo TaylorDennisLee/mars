@@ -4,7 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NewEntryComponent } from './new-entry.component';
 import { AdditionalFieldComponent } from './additionalfield/additionalfield.component';
 
-import { RadiogroupComponent } from './radiogroup';
+import { RadiogroupModule } from './radiogroup';
 
 import { SuiModule } from '../ng2-semantic-ui/ng2-semantic-ui';
 import { FlatpickrModule } from './flat/flatpickr.module';
@@ -23,12 +23,13 @@ import { FlatpickrModule } from './flat/flatpickr.module';
     CommonModule,
     SuiModule,
     ReactiveFormsModule,
-    FlatpickrModule
+    FlatpickrModule,
+    RadiogroupModule
   ],
   declarations: [
     NewEntryComponent,
     AdditionalFieldComponent,
-    RadiogroupComponent
+//     RadiogroupComponent
   ]
 })
 export class NewEntryModule { }

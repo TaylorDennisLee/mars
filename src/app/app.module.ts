@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 
 
 // import { RadiogroupComponent } from './radiogroup/radiogroup.component';
-import { RadiogroupModule } from './radiogroup';
+// import { RadiogroupModule } from './radiogroup';
 
 import { SuiModule} from './ng2-semantic-ui/ng2-semantic-ui';
 // import { FlatpickrModule } from './flat/flatpickr.module';
@@ -18,7 +18,7 @@ import { AppRoutingModule } from './app.routes';
 
 import { SidebarModule } from './ng-sidebar';
 
-import { PouchDBService } from './pouchdb.service';
+// import { PouchDBService } from './pouchdb.service';
 
 // import { EntryComponent } from './entry/entry.component';
 // import { AdditionalFieldComponent } from './entry/additionalfield/additionalfield.component';
@@ -49,7 +49,7 @@ import { NewEntryModule } from './new-entry/new-entry.module';
 //    RadiogroupModule,
     NewEntryModule
   ],
-  providers: [PouchDBService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

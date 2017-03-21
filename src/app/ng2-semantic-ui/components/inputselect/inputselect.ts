@@ -12,8 +12,6 @@ import {Subscription} from "rxjs";
 import {SuiDropdownService} from "../dropdown/dropdown.service";
 import {Input, Output} from "@angular/core";
 import {SuiSearchService} from "../search/search.service";
-import {SuiMultiSelect, SuiMultiSelectValueAccessor} from "../select/multi-select";
-import {SuiSelectMultiLabel} from "../select/multi-select-label";
 
 @Component({
     selector: 'sui-input-select',

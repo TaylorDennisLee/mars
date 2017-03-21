@@ -6,7 +6,6 @@ import { HomeComponent }   from './home/home.component';
 
 import { NewEntryComponent }   from './new-entry/new-entry.component';
 
-import { EntrySelectComponent } from './entry-select/entry-select.component';
 import { SelectEntryComponent } from './select-entry/select-entry.component';
 
 
