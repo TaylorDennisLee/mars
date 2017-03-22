@@ -11,7 +11,7 @@ export class NewEntryService {
 
     getFields(form_id: string): Observable<Field[]> {
         console.log("In Entry Service, getting: " + form_id);
-        return this.http.get('../../assets/static/final_json/new_acm_'+form_id+'_fields.json')
+        return this.http.get('assets/static/final_json/new_acm_'+form_id+'_fields.json')
         .map(res => res.json());
     }
 

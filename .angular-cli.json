@@ -9,8 +9,7 @@
       "outDir": "dist",
       "assets": [
         "assets",
-        "favicon.ico",
-        "assets/img/uw-crest-web.png"
+        "favicon.ico"
       ],
       "index": "index.html",
       "main": "main.ts",
